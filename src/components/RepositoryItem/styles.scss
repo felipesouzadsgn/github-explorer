@@ -1,0 +1,12 @@
+.item {
+  &__name {
+    font-size: 1.75rem;
+  }
+  &__description {
+    margin-top: 0.5rem;
+  }
+  &__link {
+    display: inline-block;
+    margin-top: 1.25rem;
+  }
+}
