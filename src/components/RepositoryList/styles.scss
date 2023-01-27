@@ -1,0 +1,13 @@
+.repository {
+  padding: 1rem;
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 1.5rem;
+  }
+}
