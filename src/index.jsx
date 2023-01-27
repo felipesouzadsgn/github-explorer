@@ -1,6 +1,5 @@
 import React from "react";
+import { render } from "react-dom";
 import { App } from "./App";
 
-function Main() {
-  return <App />;
-}
+render(<h1>Hello Wolrd</h1>, document.getElementById("root"));
