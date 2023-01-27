@@ -4,17 +4,15 @@ import { useState, useEffect } from "react";
 
 import { RepositoryItem } from "../RepositoryItem";
 
-const repository = {
-  name: "unform",
-  description: "Forms in React",
-  link: "https://github.com/",
-};
-
-//https://api.github.com/users/felipesouzadsgn/repos
+interface RepositoryProps {
+  id: number;
+  name: string;
+  description: string;
+  html_url: string;
+}
 
 export function RepositoryList() {
-  const [repositories, setRepositories] = useState([]);
-  const { name, description, link } = repository;
+  const [repositories, setRepositories] = useState<RepositoryProps[]>();
 
   useEffect(() => {
     fetch("https://api.github.com/users/felipesouzadsgn/repos")
@@ -26,7 +24,7 @@ export function RepositoryList() {
     <section className="repository">
       <h1 className="repository__title">Lista de Repositórios</h1>
       <ul className="repository__list">
-        {repositories.map(({ id, name, description, html_url }) => (
+        {repositories?.map(({ id, name, description, html_url }) => (
           <RepositoryItem
             key={id}
             name={name}
